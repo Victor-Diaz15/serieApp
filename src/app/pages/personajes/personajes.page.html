@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Personajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Personajes Principales</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="detail" id="open-modal-mike" detail="true">
+          <ion-label>{{mike.nombre}}</ion-label>
+        </ion-item>
+        <ion-item class="detail" id="open-modal-harvey" detail="true">
+          <ion-label>{{harvey.nombre}}</ion-label>
+        </ion-item>
+        <ion-item class="detail" id="open-modal-louis" detail="true">
+          <ion-label>{{louis.nombre}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-modal #modalMike trigger="open-modal-mike" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{mike.nombre}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modalMike.dismiss()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-img class="detail-img" [src]="mike.photo"></ion-img>
+        <p>{{mike.descripcion}}</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal #modalHarvey trigger="open-modal-harvey" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{harvey.nombre}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modalHarvey.dismiss()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-img class="detail-img" [src]="harvey.photo"></ion-img>
+        <p>{{harvey.descripcion}}</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal #modalLouis trigger="open-modal-louis" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{louis.nombre}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modalLouis.dismiss()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-img class="detail-img" [src]="louis.photo"></ion-img>
+        <p>{{louis.descripcion}}</p>
+        <!-- <div style="padding: 5px 10px 5px 10px;">
+        </div> -->
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

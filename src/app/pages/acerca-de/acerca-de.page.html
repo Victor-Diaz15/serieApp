@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Acerca De</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="slides-container">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-img src="https://imgs.search.brave.com/UV2JcBBwe2MLzO6VrlG7EGVUBz5BPeYbIT4_5CsVUFU/rs:fit:632:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5t/eHJDSDVST01pdlJW/aHlYZEhHVDBnSGFG/aiZwaWQ9QXBp" alt="Suits"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="https://imgs.search.brave.com/E-ZQBs40Ra7Fbo0vajrB3w-GoTcb2m0EDxUxjDX_bJ0/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5i/ZHNmeDJGSGRrZHJI/bUU2ZmRFYWZ3QUFB/QSZwaWQ9QXBp" alt="Suits"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="https://imgs.search.brave.com/f6KqJYxrxZ1yZLL30d_CJvVBykNwCdnC_Ivw5swNWs8/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5v/eFBLVk5MNmJtdlFw/TndoeWt6cG1RSGFF/SyZwaWQ9QXBp" alt="Suits"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="detalles-container">
+    <h5 class="ion-text-center">Detalles Sobre Suits - La Ley de los Audaces</h5>
+    <p class="ion-text-center">
+      Suits es una serie de televisión estadounidense que se emitió desde 2011 hasta 2019
+      en la cadena USA Network. La serie fue creada por Aaron Korsh y está protagonizada por
+      Gabriel Macht y Patrick J. Adams. A lo largo de sus 9 temporadas,
+      <a id="open-modal-info">
+        <ion-text color="primary" class="click-detail">
+          continuar leyendo...
+        </ion-text>
+      </a>
+    </p>
+  </div>
+
+  <div class="button-container">
+    <ion-button routerLink="/portada" expand="block">Ver Trailer...</ion-button>
+  </div>
+
+  <ion-modal #modalDetalle trigger="open-modal-info" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Info Serie</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modalDetalle.dismiss()">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          La serie se centró en
+          la vida de un bufete de abogados de Nueva York, Pearson Hardman
+          (posteriormente Pearson Specter Litt), y en particular en la relación entre Harvey Specter
+          (Macht), uno de los socios más importantes del bufete, y Mike Ross (Adams), un joven brillante
+          pero sin estudios de derecho que es contratado por Specter como su asistente legal.
+          <br>
+          La trama de la serie se centra en las relaciones interpersonales y los casos legales que el
+          bufete debe enfrentar, así como en los dilemas éticos y profesionales que deben sortear sus
+          personajes principales. A lo largo de las temporadas, los personajes evolucionan y se
+          enfrentan a diversos desafíos personales y profesionales, desde el ascenso y la caída de
+          sus carreras, hasta las dificultades en sus relaciones amorosas.
+          <br>
+          Suits ha sido muy bien recibida por la crítica y ha sido nominada a varios premios,
+          incluyendo un premio Emmy. La serie ha sido elogiada por su trama inteligente, su ritmo
+          rápido y su atención al detalle en la representación del mundo legal. Además, ha contado
+          con la participación de varios actores invitados, incluyendo a Meghan Markle, quien más
+          tarde se convirtió en la duquesa de Sussex tras su matrimonio con el príncipe Harry de
+          Inglaterra.
+          <br>
+          En resumen, Suits es una serie de televisión dramática que se centra en la vida de un
+          bufete de abogados de Nueva York y en particular en la relación entre Harvey Specter y
+          Mike Ross. A lo largo de sus 9 temporadas, la serie exploró las complejidades del mundo
+          legal y las relaciones interpersonales, convirtiéndose en un éxito de crítica y audiencia.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
